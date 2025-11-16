@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal 2MONEY</title>
+  <link rel="stylesheet" href="noticias.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Portal 2MONEY</div>
+    <nav class="menu">
+      <a href="#">Início</a>
+    </nav>
+    <div class="dev-login">
+      <button id="loginDev">Entrar como Desenvolvedor</button>
+    </div>
+    <button class="menu-toggle">☰</button>
+  </header>
+
+  <main>
+    <!-- Banner / Slider -->
+    <section class="slider-container">
+      <div class="slider" id="slider">
+        <div class="slide active"><img src="silk-stories.png" alt="Slide 1"></div>
+        <div class="slide"><img src="camisas.jpg" alt="Slide 2"></div>
+        <div class="slide"><img src="silk-stories.png" alt="Slide 3"></div>
+      </div>
+      <button class="slider-btn left" onclick="prevSlide()">&#10094;</button>
+      <button class="slider-btn right" onclick="nextSlide()">&#10095;</button>
+      <div class="slider-indicators" id="sliderIndicators"></div>
+    </section>
+
+    <!-- Mensagem -->
+    <div id="mensagem" class="mensagem" style="display:none;"></div>
+
+    <!-- Loading -->
+    <div id="loading" class="loading" style="display:none;">
+      <p>Carregando notícias...</p>
+    </div>
+
+    <!-- Área de Desenvolvedor -->
+    <section class="crud" id="areaDev" style="display:none;">
+      <h2>Área de Desenvolvedores</h2>
+
+      <!-- CRUD Notícias -->
+      <h3>Adicionar / Editar Notícias</h3>
+      <form id="formNoticia">
+        <input type="text" id="titulo" placeholder="Título da notícia" required>
+        <textarea id="descricao" placeholder="Descrição da notícia" required></textarea>
+        <input type="text" id="imagem" placeholder="URL da imagem (opcional)">
+        <button type="submit">Salvar Notícia</button>
+      </form>
+
+      <!-- CRUD Slides -->
+      <h3>Editar Slides</h3>
+      <form id="formSlide">
+        <input type="text" id="slideImagem" placeholder="URL da imagem do slide">
+        <button type="button" id="editarSlide">Atualizar Slide Atual</button>
+        <button type="button" id="adicionarSlide">➕ Adicionar Novo Slide</button>
+      </form>
+      <p class="dev-info">Modo desenvolvedor ativo — apenas para edição de notícias e slides.</p>
+    </section>
+
+    <!-- Notícias -->
+    <section class="noticias" id="listaNoticias">
+      <div class="loading-placeholder">
+        <p>Carregando notícias...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 2MONEY — Todos os direitos reservados</p>
+  </footer>
+
+  <script src="noticias.js"></script>
+</body>
+</html>
